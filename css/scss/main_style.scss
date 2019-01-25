@@ -1,0 +1,77 @@
+@import '_colors.scss';
+@import '_mixins.scss';
+$column-width: 63px; //960 - 12 column grid
+$column-gutter: 20px; //gutter included in the whole width
+$h-color:  purple;
+$global-font: Lato, sans-serif;
+$global-font-size: 12px;
+$img-global-width: 100%;
+
+body {
+    font-family: $global-font;
+    font-size: $global-font-size;
+}
+.container {
+    @include clearfix;
+    @include grid-unit(12);
+    float: none;
+    margin: 0 auto;
+    width: 1024px;  // If the device is narrower than 940px, switch to 
+    // a fluid layout
+    @media screen and (max-width:1024px) {
+      width: auto;
+    }
+
+    @media screen and (max-width:768px) {
+        width: auto;
+    }
+}
+
+.main-content {
+    @include grid-unit(8);
+}
+
+.sidebar {
+    @include grid-unit(4);
+    margin-right: 0;
+}
+
+.three-column-row {
+    @include grid-unit(4);
+    text-align:center;
+}
+
+.four-column-row {
+    @include grid-unit(3);
+    text-align:center;
+}
+
+.six-column-row {
+    @include grid-unit(2);
+    text-align:center;
+}
+
+.container {
+    width:(940px / 960px); .main-content {
+        width: (620px / 940px);
+    } .sidebar {
+        width: (300px / 940px); 
+    }
+}
+
+h1, h2, h3 {
+    color: $h-color;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
