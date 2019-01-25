@@ -12,6 +12,7 @@ body {
     font-size: $global-font-size;
 }
 .container {
+    @include clearfix;
     @include grid-unit(12);
     float: none;
     margin: 0 auto;
