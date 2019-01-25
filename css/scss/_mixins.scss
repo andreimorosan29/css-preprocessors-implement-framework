@@ -1,0 +1,25 @@
+
+@mixin grid-unit($span) {
+    float: left;
+    margin-right: $column-gutter;
+    width: ($column-width * $span) + ($column-gutter * ($span - 1));
+    img {
+        width: $img-global-width;
+    }
+    position:relative;
+}
+
+@mixin clearfix {
+     &:before,
+     &:after {
+       content:"";
+       display:table;
+     }  &:after {
+       clear:both;
+     }
+     & {
+       zoom:1;
+     }
+   }.group {
+     @include clearfix;
+   }
